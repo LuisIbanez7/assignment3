@@ -39,4 +39,23 @@ public class CheckingAccount extends BankAccount {
 		}
 
 	}
+	
+	public boolean withdraw (double amount) {
+		if (this.getBalance()>= amount) {
+			double newBalance = this.getBalance()- amount;
+			this.setBalance(newBalance);
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean deposit (double amount) {
+		if (amount < 0) {
+			return false;
+		}
+		double newBalance = this.getBalance()+ amount;
+		this.setBalance(newBalance);
+		return true;
+	}
+
 }

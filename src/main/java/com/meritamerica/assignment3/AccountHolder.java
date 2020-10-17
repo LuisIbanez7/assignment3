@@ -4,7 +4,7 @@ package com.meritamerica.assignment3;
  * This is the definition of the AccountHolder class.
  * It is meant to simulate an account holder of a banking application.
  */
-public class AccountHolder {
+public class AccountHolder implements Comparable<AccountHolder> {
 
 	private String firstName;
 	private String middleName;
@@ -14,10 +14,13 @@ public class AccountHolder {
 	private CheckingAccount[] checkingAccounts;
 	private SavingsAccount[] savingsAccounts;
 	private CDAccount[] cdAccounts;
+	//private Comparable <AccountHolder>;
 
 	/*
 	 * no arg constructor
 	 */
+	
+
 	public AccountHolder() {
 		this.firstName = "";
 		this.middleName = "";
@@ -36,7 +39,9 @@ public class AccountHolder {
 		this.lastName = lastName;
 		this.ssn = ssn;
 	}
-
+	public void compateTo(AccountHolder otherAccountHolder) {
+		return this.getCombinedBalance(getBalance)
+	}
 	public SavingsAccount addSavingsAccount(double openingBalance) {
 		SavingsAccount newAccount = new SavingsAccount(openingBalance);
 		SavingsAccount[] currentArray = getSavingsAccounts();

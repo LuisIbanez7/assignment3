@@ -80,10 +80,17 @@ public class BankAccount {
 		str.append("Checking Account Balance: " + displayInUSD(getBalance()) + "\n");
 		str.append("Checking Account Interest Rate : " + String.format("%.5f", getInterestRate()) + " \n");
 		str.append("Checking Account Balance in 3 years: " + displayInUSD(futureValue(3)) + "\n");
-
 		return str.toString();
-	}
+		}
+	public String generateStringForToString(int term) {
+		StringBuilder str = new StringBuilder();
 
+		str.append("Checking Account Balance: " + displayInUSD(getBalance()) + "\n");
+		str.append("Checking Account Interest Rate : " + String.format("%.5f", getInterestRate()) + " \n");
+		str.append("Checking Account Balance in 3 years: " + displayInUSD(futureValue(3)) + "\n");
+		str.append("the term" + term);
+		return str.toString();
+		}
 	
 //////////////////////////////////////ASSIGNMENT 2 FROM HERE DOWN ////////////////////////////////////////
 	
