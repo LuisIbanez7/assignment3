@@ -17,7 +17,7 @@ public class MeritBank {
 	private static AccountHolder[] accountHolders;
 	private static CDOffering[] cdOfferings;
 	private static Long nextAccountNumber;
-	private static Boolean goodFileHasBeenRead;
+	private static Boolean goodFileHasBeenRead = false;
 
 	public static void addAccountHolder(AccountHolder accountHolder) {
 		// if the accountHolders array has no accounts in it, we initialize it
