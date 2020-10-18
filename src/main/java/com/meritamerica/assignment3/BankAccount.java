@@ -11,6 +11,7 @@ public class BankAccount {
 	private double balance;
 	private long accountNumber;
 	private Date accountOpenedOn;
+	//private int term;
 
 	private static long currentAccountNumber = 10000000000L;
 	private static ArrayList<Long> usedAccountNumbers = new ArrayList<>();
@@ -45,12 +46,14 @@ public class BankAccount {
 		this.accountNumber = accountNumber;
 		this.balance = balance;
 		this.interestRate = interestRate;
-		this.accountOpenedOn = getOpenedOn();
+		this.accountOpenedOn = accountOpenedOn;
 	}
+	
 
-	private Date getOpenedOn() {
-		Date newDate = new Date();
-		return newDate;
+	public Date getOpenedOn() {
+		//Date newDate = new Date();
+		
+		return accountOpenedOn;
 	}
 
 	private static BankAccount readFromString(String accountData) throws ParseException {

@@ -1,5 +1,7 @@
 package com.meritamerica.assignment3;
 
+import java.util.Date;
+
 /*
  * This is the definition of the AccountHolder class.
  * It is meant to simulate an account holder of a banking application.
@@ -39,11 +41,28 @@ public class AccountHolder implements Comparable<AccountHolder> {
 		this.lastName = lastName;
 		this.ssn = ssn;
 	}
-	public void compateTo(AccountHolder otherAccountHolder) {
-		return this.getCombinedBalance(getBalance)
+	@Override
+	public int compareTo(AccountHolder otherAccountHolder) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	public String writeToString() {
+		
+		return "";
+	}
+	
+	public static AccountHolder readFromString(String accountHolderData) throws Exception{
+		AccountHolder baTemp = new AccountHolder();
+		try {
+			Double.parseDouble(accountHolderData);
+			return baTemp;
+		} catch (NumberFormatException e) {
+			throw e;
+		}
 	}
 	public SavingsAccount addSavingsAccount(double openingBalance) {
-		SavingsAccount newAccount = new SavingsAccount(openingBalance);
+		SavingsAccount newAccount = new SavingsAccount(openingBalance, .01);
 		SavingsAccount[] currentArray = getSavingsAccounts();
 
 		if (currentArray == null) {
@@ -103,7 +122,7 @@ public class AccountHolder implements Comparable<AccountHolder> {
 	public CheckingAccount addCheckingAccount(double openingBalance) {
 
 		double sum = getCheckingBalance() + getSavingsBalance();
-		CheckingAccount newAccount = new CheckingAccount(openingBalance);
+		CheckingAccount newAccount = new CheckingAccount(openingBalance, .0001);
 		CheckingAccount[] currentArray = getCheckingAccounts();
 
 		if (sum > 250000) {
@@ -268,6 +287,7 @@ public class AccountHolder implements Comparable<AccountHolder> {
 	public CDAccount addCDAccount(CDOffering cdOfferObj, double balance) {
 		// CDAccount cd = new CDAccount();
 		if (cdOfferObj != null) {
+			Date date = new Date();
 			CDAccount cd = new CDAccount(cdOfferObj, balance);
 			CDAccount[] currentArray = getCDAccounts();
 			if (currentArray == null) {
@@ -372,4 +392,6 @@ public class AccountHolder implements Comparable<AccountHolder> {
 		// return the StringBuilder object as a string.
 		return str.toString();
 	}
+
+
 }
