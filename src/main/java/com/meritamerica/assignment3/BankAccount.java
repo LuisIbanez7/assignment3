@@ -13,7 +13,7 @@ public class BankAccount {
 	private Date accountOpenedOn;
 	//private int term;
 
-	private static long currentAccountNumber = 10000000000L;
+	private static long currentAccountNumber = 0;
 	private static ArrayList<Long> usedAccountNumbers = new ArrayList<>();
 
 	public BankAccount() {

@@ -279,6 +279,7 @@ public class AccountHolder implements Comparable<AccountHolder> {
 			for (int i = 0; i < currentArray.length; i++) {
 				newArray[i] = currentArray[i];
 			}
+			newArray[newArray.length -1] = cdAccount;
 			this.cdAccounts = newArray;
 		}
 		return cdAccount;
